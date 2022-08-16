@@ -30,6 +30,7 @@ jxRequirements:
     gitName: github
     gitServer: https://github.com
     provider: minikube
+    registry: 10.101.120.63
   environments:
   - key: dev
     owner: testingcicdorg
