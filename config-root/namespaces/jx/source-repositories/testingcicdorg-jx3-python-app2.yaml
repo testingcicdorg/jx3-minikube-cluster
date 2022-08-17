@@ -1,0 +1,22 @@
+apiVersion: jenkins.io/v1
+kind: SourceRepository
+metadata:
+  creationTimestamp: null
+  labels:
+    owner: testingcicdorg
+    provider: github
+    repository: jx3-python-app2
+    gitops.jenkins-x.io/pipeline: 'namespaces'
+  name: testingcicdorg-jx3-python-app2
+  namespace: jx
+spec:
+  httpCloneURL: https://github.com/testingcicdorg/jx3-python-app2.git
+  org: testingcicdorg
+  provider: https://github.com
+  providerKind: github
+  providerName: github
+  repo: jx3-python-app2
+  scheduler:
+    kind: ""
+    name: in-repo
+  url: https://github.com/testingcicdorg/jx3-python-app2

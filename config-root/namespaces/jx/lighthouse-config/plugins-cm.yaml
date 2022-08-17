@@ -6,6 +6,14 @@ data:
       repos:
       - testingcicdorg/jx3-minikube-cluster
       require_self_approval: true
+    - lgtm_acts_as_approve: true
+      repos:
+      - testingcicdorg/jx3-python-app
+      require_self_approval: true
+    - lgtm_acts_as_approve: true
+      repos:
+      - testingcicdorg/jx3-python-app2
+      require_self_approval: true
     cat: {}
     cherry_pick_unapproved: {}
     config_updater:
@@ -21,6 +29,16 @@ data:
         name: cd-indicators
       - endpoint: http://lighthouse-webui-plugin.jx.svc.cluster.local/lighthouse/events
         name: lighthouse-webui-plugin
+      testingcicdorg/jx3-python-app:
+      - endpoint: http://cd-indicators.jx.svc.cluster.local/lighthouse/events
+        name: cd-indicators
+      - endpoint: http://lighthouse-webui-plugin.jx.svc.cluster.local/lighthouse/events
+        name: lighthouse-webui-plugin
+      testingcicdorg/jx3-python-app2:
+      - endpoint: http://cd-indicators.jx.svc.cluster.local/lighthouse/events
+        name: cd-indicators
+      - endpoint: http://lighthouse-webui-plugin.jx.svc.cluster.local/lighthouse/events
+        name: lighthouse-webui-plugin
     heart: {}
     label:
       additional_labels: null
@@ -28,6 +46,38 @@ data:
     plugins:
       testingcicdorg/jx3-minikube-cluster:
       - config-updater
+      - approve
+      - assign
+      - blunderbuss
+      - help
+      - hold
+      - lgtm
+      - lifecycle
+      - override
+      - size
+      - trigger
+      - wip
+      - heart
+      - cat
+      - dog
+      - pony
+      testingcicdorg/jx3-python-app:
+      - approve
+      - assign
+      - blunderbuss
+      - help
+      - hold
+      - lgtm
+      - lifecycle
+      - override
+      - size
+      - trigger
+      - wip
+      - heart
+      - cat
+      - dog
+      - pony
+      testingcicdorg/jx3-python-app2:
       - approve
       - assign
       - blunderbuss
@@ -55,6 +105,14 @@ data:
     - repos:
       - testingcicdorg/jx3-minikube-cluster
       trusted_org: todo
+    - repos:
+      - testingcicdorg/jx3-python-app
+      trusted_org: todo
+    - repos:
+      - testingcicdorg/jx3-python-app2
+      trusted_org: todo
+    welcome:
+    - message_template: Welcome
 kind: ConfigMap
 metadata:
   creationTimestamp: null

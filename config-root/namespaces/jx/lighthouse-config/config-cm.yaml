@@ -8,6 +8,8 @@ data:
     in_repo_config:
       enabled:
         testingcicdorg/jx3-minikube-cluster: true
+        testingcicdorg/jx3-python-app: true
+        testingcicdorg/jx3-python-app2: true
     plank: {}
     pod_namespace: jx
     prowjob_namespace: jx
@@ -20,6 +22,8 @@ data:
         skip-unknown-contexts: false
       merge_method:
         testingcicdorg/jx3-minikube-cluster: merge
+        testingcicdorg/jx3-python-app: merge
+        testingcicdorg/jx3-python-app2: merge
       queries:
       - labels:
         - approved
@@ -31,6 +35,8 @@ data:
         - needs-rebase
         repos:
         - testingcicdorg/jx3-minikube-cluster
+        - testingcicdorg/jx3-python-app
+        - testingcicdorg/jx3-python-app2
       - labels:
         - updatebot
         missingLabels:
@@ -41,6 +47,8 @@ data:
         - needs-rebase
         repos:
         - testingcicdorg/jx3-minikube-cluster
+        - testingcicdorg/jx3-python-app
+        - testingcicdorg/jx3-python-app2
       target_url: http://lighthouse-jx.192.168.49.2.nip.io/merge/status
 kind: ConfigMap
 metadata:
